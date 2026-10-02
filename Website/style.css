@@ -103,3 +103,63 @@ button:hover {
     color: red;
     text-align: center;
 }
+
+.registration-container {
+
+    background-color: white;
+    width: 450px;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+
+}
+
+.registration-container > p {
+
+    text-align: center;
+    color: #666;
+
+}
+
+.registration-details {
+
+    margin-top: 25px;
+    margin-bottom: 25px;
+
+}
+
+.detail {
+
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 15px;
+    margin-top: 15px;
+
+}
+
+.detail span {
+
+    display: block;
+    color: #666;
+    margin-bottom: 5px;
+
+}
+
+.detail strong {
+
+    font-size: 18px;
+
+}
+
+#registerButton {
+
+    width: 100%;
+
+}
+
+#registrationMessage {
+
+    color: green;
+    text-align: center;
+
+}

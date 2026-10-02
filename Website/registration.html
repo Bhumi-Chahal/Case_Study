@@ -4,14 +4,50 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Registration</title>
+
+    <title>Confirm Registration</title>
+
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-    <h1>Event Registration</h1>
+    <div class="registration-container">
 
-    <p>Registration page</p>
+        <h1>Confirm Registration</h1>
+
+        <p>Review your details before confirming.</p>
+
+        <div class="registration-details">
+
+            <div class="detail">
+
+                <span>Email</span>
+
+                <strong id="userEmail"></strong>
+
+            </div>
+
+
+            <div class="detail">
+
+                <span>Selected Event</span>
+
+                <strong id="selectedEvent"></strong>
+
+            </div>
+
+        </div>
+
+        <button id="registerButton">
+            Confirm Registration
+        </button>
+
+        <p id="registrationMessage"></p>
+
+    </div>
+
+    <script src="registration.js"></script>
 
 </body>
 
