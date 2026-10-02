@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Event Selection</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="selection-container">
+
+        <h1>Select an Event</h1>
+
+        <p>Choose one event to continue with registration.</p>
+
+        <form id="selectionForm">
+
+            <div class="event-card">
+                <input
+                    type="radio"
+                    id="techfest"
+                    name="event"
+                    value="techfest"
+                >
+
+                <label for="techfest">
+                    TechFest 2026
+                </label>
+
+                <p>Coding and Technology</p>
+                <span>15 October 2026</span>
+            </div>
+
+
+            <div class="event-card">
+                <input
+                    type="radio"
+                    id="cultural"
+                    name="event"
+                    value="cultural"
+                >
+
+                <label for="cultural">
+                    Cultural Night
+                </label>
+
+                <p>Music and Dance</p>
+                <span>18 October 2026</span>
+            </div>
+
+
+            <div class="event-card">
+                <input
+                    type="radio"
+                    id="sports"
+                    name="event"
+                    value="sports"
+                >
+
+                <label for="sports">
+                    Sports Meet
+                </label>
+
+                <p>Inter-college Sports</p>
+                <span>20 October 2026</span>
+            </div>
+
+
+            <button type="submit">Continue</button>
+
+            <p id="selectionMessage"></p>
+
+        </form>
+
+    </div>
+
+    <script src="selection.js"></script>
+
+</body>
+
+</html>
