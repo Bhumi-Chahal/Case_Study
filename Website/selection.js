@@ -1,17 +1,23 @@
-import { test, expect } from '@playwright/test';
+const selectionForm = document.getElementById("selectionForm");
 
-test('select an event and continue', async ({ page }) => {
+selectionForm.addEventListener("submit", function(event) {
 
-  await page.goto('/selection.html');
+    event.preventDefault();
 
-  await page.getByLabel('TechFest 2026').check();
+    const selectedEvent = document.querySelector(
+        'input[name="event"]:checked'
+    );
 
-  await expect(
-    page.getByLabel('TechFest 2026')
-  ).toBeChecked();
+    if (selectedEvent) {
 
-  await page.getByRole('button', { name: 'Continue' }).click();
+        sessionStorage.setItem("selectedEvent", selectedEvent.value);
 
-  await expect(page).toHaveURL(/registration.html/);
+        window.location.href = "registration.html";
 
+    } else {
+
+        document.getElementById("selectionMessage").textContent =
+            "Please select an event.";
+
+    }
 });
