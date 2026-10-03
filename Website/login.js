@@ -10,7 +10,7 @@ loginForm.addEventListener("submit", function(event) {
     if (email === "student@gmail.com" && password === "123456") {
 
         sessionStorage.setItem("userEmail", email);
-        
+
         window.location.href = "selection.html";
 
     } else {

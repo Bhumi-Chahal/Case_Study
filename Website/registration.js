@@ -1,8 +1,9 @@
 const userEmail = sessionStorage.getItem("userEmail");
 const selectedEvent = sessionStorage.getItem("selectedEvent");
 
+
 document.getElementById("userEmail").textContent =
-    userEmail || "student@gmail.com";
+    userEmail || "No email found";
 
 
 if (selectedEvent === "techfest") {
@@ -27,12 +28,15 @@ if (selectedEvent === "techfest") {
 }
 
 
-document.getElementById("registerButton").addEventListener(
-    "click",
-    function() {
+const registrationForm =
+    document.getElementById("registrationForm");
 
-        document.getElementById("registrationMessage").textContent =
-            "Registration Successful";
 
-    }
-);
+registrationForm.addEventListener("submit", function(event) {
+
+    event.preventDefault();
+
+    document.getElementById("registrationMessage").textContent =
+        "Registration Successful";
+
+});
