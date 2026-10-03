@@ -51,6 +51,12 @@ test('successful registration', async ({ page }) => {
     name: 'Register'
   }).click();
 
+  await expect(
+    page.getByRole('radio', {
+      name: 'Male',
+      exact: true
+    })
+  ).toBeChecked();
 
   await expect(
     page.getByText('Registration Successful')
