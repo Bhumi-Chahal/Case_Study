@@ -20,7 +20,7 @@ test('fill registration form', async ({ page }) => {
 
   await page.getByLabel('Phone Number').fill('9876543210');
 
-  await page.getByLabel('Male').check();
+  await page.getByRole('radio', { name: 'Male', exact: true }).check();
 
 });
 
@@ -44,7 +44,7 @@ test('successful registration', async ({ page }) => {
 
   await page.getByLabel('Phone Number').fill('9876543210');
 
-  await page.getByLabel('Male').check();
+  await page.getByRole('radio', { name: 'Male', exact: true }).check();
 
 
   await page.getByRole('button', {
