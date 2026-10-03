@@ -163,3 +163,119 @@ button:hover {
     text-align: center;
 
 }
+
+.registration-container {
+
+    background-color: white;
+    width: 450px;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+
+}
+
+
+.registration-container > p {
+
+    text-align: center;
+    color: #666;
+
+}
+
+
+.registration-details {
+
+    margin-top: 20px;
+    margin-bottom: 20px;
+
+}
+
+
+.detail {
+
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 12px;
+    margin-top: 10px;
+
+}
+
+
+.detail span {
+
+    display: block;
+    color: #666;
+    margin-bottom: 5px;
+
+}
+
+
+.detail strong {
+
+    font-size: 16px;
+
+}
+
+
+.phone-input {
+
+    display: flex;
+    align-items: center;
+    gap: 8px;
+
+}
+
+
+.phone-input span {
+
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f4f6f8;
+
+}
+
+
+.phone-input input {
+
+    flex: 1;
+
+}
+
+
+.gender-options {
+
+    display: flex;
+    align-items: center;
+    gap: 5px;
+
+}
+
+
+.gender-options input {
+
+    margin: 5px 0 0 10px;
+
+}
+
+
+.gender-options label {
+
+    margin-top: 5px;
+
+}
+
+
+.registration-container button {
+
+    width: 100%;
+
+}
+
+
+#registrationMessage {
+
+    color: green;
+    text-align: center;
+
+}
