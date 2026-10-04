@@ -20,18 +20,7 @@ test('fill registration form', async ({ page }) => {
 
   await page.getByLabel('Phone Number').fill('9876543210');
 
-  await page.getByRole('radio', {
-    name: 'Male',
-    exact: true
-  }).check();
-
-
-  await expect(
-    page.getByRole('radio', {
-      name: 'Male',
-      exact: true
-    })
-  ).toBeChecked();
+  await page.getByLabel('Male').check();
 
 });
 
@@ -65,6 +54,12 @@ test('successful registration', async ({ page }) => {
     name: 'Register'
   }).click();
 
+  await expect(
+    page.getByRole('radio', {
+      name: 'Male',
+      exact: true
+    })
+  ).toBeChecked();
 
   await expect(
     page.getByText('Registration Successful')
