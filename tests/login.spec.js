@@ -15,3 +15,17 @@ test('invalid login', async ({ page }) => {
   ).toBeVisible();
 
 });
+
+test('successful login', async ({ page }) => {
+
+    await page.goto('/login.html');
+
+    await page.getByLabel('Email').fill('student@gmail.com');
+
+    await page.getByLabel('Password').fill('123456');
+
+    await page.getByRole('button', { name: 'Login' }).click();
+
+    await expect(page).toHaveURL(/selection.html/);
+
+});
