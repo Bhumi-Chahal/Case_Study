@@ -20,7 +20,18 @@ test('fill registration form', async ({ page }) => {
 
   await page.getByLabel('Phone Number').fill('9876543210');
 
-  await page.getByRole('radio', { name: 'Male', exact: true }).check();
+  await page.getByRole('radio', {
+    name: 'Male',
+    exact: true
+  }).check();
+
+
+  await expect(
+    page.getByRole('radio', {
+      name: 'Male',
+      exact: true
+    })
+  ).toBeChecked();
 
 });
 
@@ -44,19 +55,16 @@ test('successful registration', async ({ page }) => {
 
   await page.getByLabel('Phone Number').fill('9876543210');
 
-  await page.getByRole('radio', { name: 'Male', exact: true }).check();
+  await page.getByRole('radio', {
+    name: 'Male',
+    exact: true
+  }).check();
 
 
   await page.getByRole('button', {
     name: 'Register'
   }).click();
 
-  await expect(
-    page.getByRole('radio', {
-      name: 'Male',
-      exact: true
-    })
-  ).toBeChecked();
 
   await expect(
     page.getByText('Registration Successful')
