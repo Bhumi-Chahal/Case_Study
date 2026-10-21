@@ -1,0 +1,42 @@
+name: Lab verification and delivery
+on:
+  push:
+    branches: [main, 'codex/lab-manual-evidence']
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  verify-and-package:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+          cache: npm
+      - run: npm ci
+      - run: npx playwright install --with-deps chromium
+      - name: Run existing Playwright tests
+        run: npm run test:lab
+      - name: Run Selenium checks
+        run: |
+          node node_modules/http-server/bin/http-server Website -p 3108 -a 127.0.0.1 -c-1 > server.log 2>&1 &
+          for i in $(seq 1 30); do curl -fsS http://127.0.0.1:3108/login.html > /dev/null && break; sleep 1; done
+          npm run test:selenium
+      - name: Prepare delivery package
+        run: npm run build:lab
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: test-evidence
+          path: |
+            lab-report/
+            test-results/
+            selenium-results/
+      - uses: actions/upload-artifact@v4
+        with:
+          name: event-registration-site
+          path: dist/

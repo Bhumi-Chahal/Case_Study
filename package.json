@@ -3,7 +3,11 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
-  "scripts": {},
+  "scripts": {
+    "test:lab": "playwright test --config=lab.playwright.config.cjs",
+    "test:selenium": "node selenium-tests/lab-suite.cjs",
+    "build:lab": "node scripts/package-site.cjs"
+  },
   "keywords": [],
   "author": "",
   "license": "ISC",
@@ -12,5 +16,8 @@
     "@playwright/test": "^1.63.0",
     "@types/node": "^26.6.4",
     "http-server": "^14.1.1"
+  },
+  "dependencies": {
+    "selenium-webdriver": "^4.51.0"
   }
 }
